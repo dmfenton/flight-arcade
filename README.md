@@ -46,7 +46,7 @@ chromatic-cli reset-device --player 1 --yes
 
 Read the expected hash from `verification/rom-manifest.json`. Keep the console powered on and connected throughout the write. Confirm the arcade menu, physical controls, and sound afterward. The updater, CLI, developer activation codes, and cartridge backups are not distributed with this project.
 
-The release build was written successfully to a 4 MiB DevDay cartridge, and its header was read back and checked. The handheld was reset successfully. Physical screen, controls, and audio confirmation remain pending; emulator results are reported separately below.
+The release build was written successfully to a 4 MiB DevDay cartridge, its header was read back and checked, and the handheld reset succeeded. The owner confirmed the game looks good on the physical Chromatic. Physical controls and audio have not been separately confirmed; emulator checks are reported below.
 
 ## Architecture map
 
@@ -62,7 +62,7 @@ The release build was written successfully to a 4 MiB DevDay cartridge, and its 
 | Original fonts and artwork | `src/generate_assets.py`; `src/assets.c` is generated |
 | Shared hardware constants and interfaces | `src/arcade.h` |
 | Compilation and ROM header | `build.sh` with GBDK 2020 4.5.0, from `GBDK_ROOT` or `tools/gbdk` |
-| Emulator inputs, screenshots, result checks and progress traces | `verify.py`, `playtest.py`, `playtest_more.py`, `verification/`, `private/` |
+| Emulator inputs, screenshots, result checks and progress traces | `verify.py`, `playtest.py`, `playtest_more.py`, `verify_navigation.py`, `verification/`, `private/` |
 
 Game code occupies separate MBC5 ROM banks. The menu and shared routines live in bank zero; instructions and the puzzle picker share bank 17. There are no network calls, accounts, subscriptions, or runtime dependencies outside the cartridge. FRAM owns persistent best scores and the sound setting; their in-memory values are loaded at boot and written when changed. The 16-game save layout is version 2. Active round state remains in working RAM. Rendering copies are disposable caches of that state.
 
@@ -88,6 +88,7 @@ python -m pip install -r requirements-dev.txt
 python verify.py
 python playtest.py
 python playtest_more.py
+python verify_navigation.py
 python package.py
 ```
 
@@ -96,6 +97,8 @@ python package.py
 The smoke suite boots the real compiled ROM and uses joypad input to enter every game, display instructions, pause, resume, and return to the menu. Extended tests play the shooter, collect snake fruit, clear the first brick wall, verify merge conservation and undo, clear a mine board, solve ten generated light puzzles, win a rally match, and navigate the narrowing river. Added-game tests clear falling-block rows, solve all 44 crate/peg puzzles, match all cards, escape a maze, finish a legal Reversi match, clear a normally dealt solitaire game, and make two soft landings. Save persistence is checked by exporting cartridge RAM and booting a new emulator with it, including scores for the added games. Test bots read game memory and rendered sprites to choose inputs; they do not write game state. These are functional checks, not a claim that an automated bot evaluated subjective fun.
 
 The river pilot and solitaire solver may try multiple normally generated games. Attempts vary only menu timing through normal emulation; they never edit ROM or RAM to force a win. Results record those attempts. Generated puzzle solutions are replayed through the joypad to verify the actual cartridge program. Audio checks confirm sound output and a silent muted mode in the emulator.
+
+The navigation audit enters every game through real joypad input and checks instruction-screen back, held-button behavior, pause/resume with A and Start, sound toggling while paused, and return to the same menu selection. It checks puzzle-picker cancellation and wrap, full merge-board undo/finish, mine-loss continuation, solved-light progression, and both replay and direct-menu routes from every game's result screen. Result screens are reached through normal gameplay, not injected state. **Start, then B** returns from gameplay to the arcade menu; **B** backs out of instructions, puzzle pickers, and result screens.
 
 Screenshots and public test summaries are in `verification/`. Detailed input traces and atomically updated progress stay in the main checkout's owner-readable `private/` directory, resolved through Git's common directory. An extracted source archive uses its own `private/` folder. Device-specific reports and cartridge backups are ignored by Git and excluded from releases.
 

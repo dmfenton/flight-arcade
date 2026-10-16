@@ -1,0 +1,230 @@
+{
+  "rom_sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "passed": true,
+  "results": [
+    {
+      "game": "Star Skimmer",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Orchard Snake",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Brick Flight",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Merge Cabin",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Mine Garden",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Lights Out",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "solved_to_next_puzzle",
+        "next_puzzle_to_menu"
+      ]
+    },
+    {
+      "game": "Orbit Rally",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "River Run",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Block Drop",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Crate Escape",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": true,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Flip Pairs",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Maze Hopper",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Peg Trails",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": true,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Orbit Discs",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Golf Solitaire",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    },
+    {
+      "game": "Lunar Lander",
+      "instructions_back": true,
+      "held_buttons_do_not_skip_screens": true,
+      "pause_resume_a_and_start": true,
+      "pause_sound_toggle": true,
+      "pause_to_menu": true,
+      "selection_retained": true,
+      "puzzle_picker_cancel_wrap_and_last_level": false,
+      "terminal_routes": [
+        "result_b_to_menu",
+        "result_a_to_play_then_menu"
+      ]
+    }
+  ]
+}

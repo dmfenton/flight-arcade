@@ -16,6 +16,11 @@ __pycache__/
 !/verification/playtest-results.json
 !/verification/expanded-playtest-results.json
 !/verification/audio-results.json
+!/verification/navigation-results.json
+!/verification/navigation-results-1-4.png
+!/verification/navigation-results-5-8.png
+!/verification/navigation-results-9-12.png
+!/verification/navigation-results-13-16.png
 !/verification/menu.png
 !/verification/menu-2.png
 !/verification/games-1-4.png
