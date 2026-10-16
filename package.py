@@ -25,7 +25,7 @@ assert (sum(rom)-rom[0x14e]-rom[0x14f])&65535==int.from_bytes(rom[0x14e:0x150],'
 assert len(rom)==524288 and rom[0x143]==0xc0 and rom[0x147:0x14a]==bytes([0x1b,4,3]),f'{ROOT}/build/FlightArcade.gbc: unexpected cartridge layout'
 manifest={'rom':'build/FlightArcade.gbc','bytes':len(rom),'sha256':sha,'title':rom[0x134:0x143].split(b'\0')[0].decode(),'cgb_flag':hex(rom[0x143]),'platform':'Game Boy Color','cartridge_type':hex(rom[0x147]),'rom_size_code':hex(rom[0x148]),'ram_size_code':hex(rom[0x149]),'header_checksum_valid':True,'global_checksum_valid':True,'sdk_version':'GBDK 2020 4.5.0','games':len(games)}
 (ROOT/'verification/rom-manifest.json').write_text(json.dumps(manifest,indent=2))
-files=[ROOT/name for name in ['.gitignore','README.md','LICENSE','THIRD_PARTY_NOTICES.md','CONTRIBUTING.md','requirements-dev.txt','build.sh','verify.py','verify_navigation.py','playtest.py','playtest_more.py','package.py','build/FlightArcade.gbc']]
+files=[ROOT/name for name in ['.gitignore','README.md','LICENSE','THIRD_PARTY_NOTICES.md','CONTRIBUTING.md','RELEASE_NOTES.md','requirements-dev.txt','build.sh','verify.py','verify_navigation.py','playtest.py','playtest_more.py','package.py','build/FlightArcade.gbc']]
 files+=[path for path in (ROOT/'src').iterdir()if path.suffix in ('.c','.h','.py','.json')]
 files+=[ROOT/'verification'/name for name in ['puzzle-solutions.json','rom-manifest.json','smoke-results.json','playtest-results.json','expanded-playtest-results.json','audio-results.json','navigation-results.json']]
 files+=list((ROOT/'.github/workflows').glob('*.yml'))

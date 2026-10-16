@@ -1,6 +1,7 @@
 name: Build and playtest
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -46,3 +47,63 @@ jobs:
             build/FlightArcade.gbc
             FlightArcade.zip
             verification/rom-manifest.json
+
+  publish:
+    if: github.event_name == 'workflow_dispatch'
+    needs: verify
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RELEASE_TAG: v0.1.0
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Download the build that passed every check
+        run: gh run download "$GITHUB_RUN_ID" --name flight-arcade --dir release
+      - name: Verify release contents and navigation evidence
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import hashlib,json
+          root=Path('release')
+          manifest=json.loads((root/'verification/rom-manifest.json').read_text())
+          rom=(root/'build/FlightArcade.gbc').read_bytes()
+          assert hashlib.sha256(rom).hexdigest()==manifest['sha256']
+          with ZipFile(root/'FlightArcade.zip')as archive:
+              assert archive.testzip()is None
+              assert archive.read('FlightArcade/build/FlightArcade.gbc')==rom
+              for name in archive.namelist():
+                  assert not any(part in ('private','tools','.git','..')for part in Path(name).parts)
+                  assert not name.endswith(('.sav','.ram','.rtc','delivery.json'))
+              navigation=json.loads(archive.read('FlightArcade/verification/navigation-results.json'))
+              assert navigation['passed']and len(navigation['results'])==16
+              assert navigation['rom_sha256']==manifest['sha256']
+              assert archive.read('FlightArcade/LICENSE').startswith(b'MIT License')
+          print('Verified release ROM and all 16 navigation routes:',manifest['sha256'])
+          PY
+      - name: Publish the tested release
+        run: |
+          gh release create "$RELEASE_TAG" \
+            release/build/FlightArcade.gbc \
+            release/FlightArcade.zip \
+            release/verification/rom-manifest.json \
+            --target "$GITHUB_SHA" \
+            --title "Flight Arcade $RELEASE_TAG" \
+            --notes-file RELEASE_NOTES.md
+      - name: Verify the public ROM download
+        run: |
+          curl --fail --location --retry 3 \
+            "https://github.com/$GITHUB_REPOSITORY/releases/download/$RELEASE_TAG/FlightArcade.gbc" \
+            --output release/public-download.gbc
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          root=Path('release')
+          expected=json.loads((root/'verification/rom-manifest.json').read_text())['sha256']
+          assert hashlib.sha256((root/'public-download.gbc').read_bytes()).hexdigest()==expected
+          print('Public release download verified:',expected)
+          PY
