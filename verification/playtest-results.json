@@ -1,0 +1,100 @@
+{
+  "rom_sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "results": [
+    {
+      "game": "Star Skimmer",
+      "shooting_and_enemy_hits": true,
+      "saved_best_after_restart": true,
+      "saved_sound_after_restart": true,
+      "emulated_frames": 1322
+    },
+    {
+      "fruit_collection_and_growth": true,
+      "wall_collision_and_game_over": true,
+      "game": "Orchard Snake",
+      "emulated_frames": 988,
+      "score": 60
+    },
+    {
+      "paddle_ball_and_brick_collisions": true,
+      "cleared_first_wall": true,
+      "stage_2": true,
+      "game": "Brick Flight",
+      "emulated_frames": 3339,
+      "score": 550
+    },
+    {
+      "undo_restores_board_and_score": true,
+      "tile_value_conservation": true,
+      "valid_moves": 139,
+      "merges": 90,
+      "game": "Merge Cabin",
+      "emulated_frames": 1808,
+      "score": 1360
+    },
+    {
+      "safe_first_pick": true,
+      "flood_reveal": true,
+      "flag_and_unflag": true,
+      "resume_has_no_action": true,
+      "all_53_safe_cells_revealed": true,
+      "win": true,
+      "game": "Mine Garden",
+      "emulated_frames": 894,
+      "score": 646
+    },
+    {
+      "undo": true,
+      "10_generated_puzzles_solved": true,
+      "next_puzzle_and_score": true,
+      "game": "Lights Out",
+      "emulated_frames": 3756,
+      "score": 2908
+    },
+    {
+      "serve_and_both_paddles": true,
+      "first_to_7_win": true,
+      "game": "Orbit Rally",
+      "emulated_frames": 4892,
+      "score": 1345
+    },
+    {
+      "scrolling_and_steering": true,
+      "boost_then_cruise": true,
+      "gems_and_distance_score": true,
+      "narrow_channel_survival": true,
+      "channel_width": 11,
+      "attempts": [
+        {
+          "menu_delay_frames": 0,
+          "score": 155,
+          "game_over": true
+        },
+        {
+          "menu_delay_frames": 7,
+          "score": 314,
+          "game_over": true
+        },
+        {
+          "menu_delay_frames": 19,
+          "score": 289,
+          "game_over": true
+        },
+        {
+          "menu_delay_frames": 31,
+          "score": 646,
+          "game_over": true
+        },
+        {
+          "menu_delay_frames": 63,
+          "score": 750,
+          "game_over": false
+        }
+      ],
+      "game": "River Run",
+      "emulated_frames": 4214,
+      "score": 750
+    }
+  ],
+  "elapsed_seconds": 4.19
+}

@@ -1,0 +1,149 @@
+{
+  "rom_sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "results": [
+    {
+      "game": "Star Skimmer",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Orchard Snake",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Brick Flight",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Merge Cabin",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Mine Garden",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Lights Out",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Orbit Rally",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "River Run",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Block Drop",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Crate Escape",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Flip Pairs",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Maze Hopper",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Peg Trails",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Orbit Discs",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Golf Solitaire",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    },
+    {
+      "game": "Lunar Lander",
+      "boot": true,
+      "instructions": true,
+      "play_screen": true,
+      "pause_freezes_score": true,
+      "resume": true,
+      "return_to_menu": true
+    }
+  ]
+}
