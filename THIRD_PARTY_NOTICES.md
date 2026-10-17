@@ -1,6 +1,6 @@
 # Third-party notices
 
-Flight Arcade's game code, tile/font artwork, sound-effect definitions, puzzle generators, tests, and documentation were created for this project with Codex and are released under the [MIT License](LICENSE). It contains no third-party game ROMs or extracted game artwork or audio.
+Flight Arcade's game code, tile/font artwork, sound-effect definitions, tests, and documentation were created for this project with Codex and are released under the [MIT License](LICENSE). It contains no third-party game ROMs or extracted game artwork or audio.
 
 ## GBDK 2020 and SDCC
 

@@ -1,15 +1,16 @@
 {
   "rom": "build/FlightArcade.gbc",
-  "bytes": 524288,
-  "sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "bytes": 262144,
+  "sha256": "f12f55f0b59ce69e49cc1dd353749fba6499d503612b61d5503b1478ce9f340f",
   "title": "FLIGHTARCADE",
   "cgb_flag": "0xc0",
   "platform": "Game Boy Color",
   "cartridge_type": "0x1b",
-  "rom_size_code": "0x4",
+  "rom_size_code": "0x3",
   "ram_size_code": "0x3",
   "header_checksum_valid": true,
   "global_checksum_valid": true,
   "sdk_version": "GBDK 2020 4.5.0",
-  "games": 16
+  "games": 8,
+  "release_status": "development candidate; not physically installed"
 }

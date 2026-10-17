@@ -1,230 +1,271 @@
 {
-  "rom_sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "rom_sha256": "f12f55f0b59ce69e49cc1dd353749fba6499d503612b61d5503b1478ce9f340f",
   "passed": true,
   "results": [
     {
       "game": "Star Skimmer",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Orchard Snake",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Reactor Drop",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Brick Flight",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Ricochet Works",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Merge Cabin",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Gravity Rally",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Mine Garden",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Tide Rider",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "fork",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "fork",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Lights Out",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "solved_to_next_puzzle",
-        "next_puzzle_to_menu"
+      "game": "Pulse Serpent",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "coil-choice",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "coil-choice",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "Orbit Rally",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Orbit Salvage",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     },
     {
-      "game": "River Run",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Block Drop",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Crate Escape",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": true,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Flip Pairs",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Maze Hopper",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Peg Trails",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": true,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Orbit Discs",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Golf Solitaire",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
-      ]
-    },
-    {
-      "game": "Lunar Lander",
-      "instructions_back": true,
-      "held_buttons_do_not_skip_screens": true,
-      "pause_resume_a_and_start": true,
-      "pause_sound_toggle": true,
-      "pause_to_menu": true,
-      "selection_retained": true,
-      "puzzle_picker_cancel_wrap_and_last_level": false,
-      "terminal_routes": [
-        "result_b_to_menu",
-        "result_a_to_play_then_menu"
+      "game": "Lunar Courier",
+      "controls_back": true,
+      "tactics_back": true,
+      "tactics_play": true,
+      "game_pause": true,
+      "pause_freezes_simulation": true,
+      "start_resume": true,
+      "game_menu": true,
+      "checkpoints": [
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        },
+        {
+          "screen": "loss_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
       ]
     }
-  ]
+  ],
+  "checkpoint_method": "whole emulator snapshots reached through joypad input; no RAM patching"
 }

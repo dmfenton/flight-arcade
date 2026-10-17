@@ -1,37 +1,22 @@
 #include "arcade.h"
 const char * const game_names[GAME_COUNT] = {
     "STAR SKIMMER",
-    "ORCHARD SNAKE",
-    "BRICK FLIGHT",
-    "MERGE CABIN",
-    "MINE GARDEN",
-    "LIGHTS OUT",
-    "ORBIT RALLY",
-    "RIVER RUN",
-    "BLOCK DROP",
-    "CRATE ESCAPE",
-    "FLIP PAIRS",
-    "MAZE HOPPER",
-    "PEG TRAILS",
-    "ORBIT DISCS",
-    "GOLF SOLITAIRE",
-    "LUNAR LANDER"
+    "REACTOR DROP",
+    "RICOCHET WORKS",
+    "GRAVITY RALLY",
+    "TIDE RIDER",
+    "PULSE SERPENT",
+    "ORBIT SALVAGE",
+    "LUNAR COURIER"
 };
 const char * const game_descriptions[GAME_COUNT] = {
-    "SPACE SHMUP",
-    "GROW YOUR GARDEN",
-    "PADDLE + BRICKS",
-    "SLIDE. MERGE. UNDO.",
-    "A LITTLE LOGIC",
-    "25 LIGHTS TO SOLVE",
-    "ONE MORE RALLY",
-    "A RIVER OF TROUBLE",
-    "FALL. ROTATE. CLEAR",
-    "24 CRATE PUZZLES",
-    "A MEMORY GETAWAY",
-    "EXPLORE + COLLECT",
-    "20 PEG PUZZLES",
-    "STRATEGY VS CPU",
-    "A WHOLE DECK AWAY",
-    "A SOFT MOON LANDING"
+    "SALVAGE + UPGRADES",
+    "PRESSURE + COOLANT",
+    "GRAVITY + MAGNETS",
+    "SPIN + FORCE FIELDS",
+    "CURRENTS + RESCUES",
+    "PHASE + TAIL RISKS",
+    "GRAVITY + TOW LINES",
+    "CARGO + MOON ROUTES"
 };
+const uint8_t game_save_slots[GAME_COUNT] = {0,8,2,10,6,1,13,15};
