@@ -1,13 +1,15 @@
-Flight Arcade puts 16 original games in one offline Game Boy Color ROM: arcade games, solitaire, Reversi, falling blocks, memory, mazes, lunar landing, and 44 crate/peg puzzles. Includes saved best scores, pause, and sound controls.
+# Eight-game development candidate
 
-Project source, tile/font artwork, sound-effect definitions, and puzzle generators are MIT licensed. See `THIRD_PARTY_NOTICES.md` for the separately licensed toolchain and development tools.
+The new collection favors action and unusual physics: gun heat and salvage,
+reactor coolant, reversible gravity and magnetic catches, spinning gravity
+rallies, river momentum, timed serpent phasing, spring-tethered salvage, and
+cargo-sensitive moon routes.
 
-Downloads:
+Each game has a complete run and a distinct resource tradeoff. Controls and
+Tactics pages explain both. Start then B returns to the arcade menu from every
+live game and intermission; results support replay and menu exit.
 
-- `FlightArcade.gbc`: ready-to-play 512 KiB Game Boy Color ROM, MBC5 with 32 KiB save RAM.
-- `FlightArcade.zip`: ROM, project source, license, build instructions, and public verification reports. SDK downloads, flashing tools, cartridge backups, and private traces are excluded.
-- `rom-manifest.json`: ROM hash and verified header/checksum metadata.
-
-All 16 games pass menu, instruction, pause/resume, and return checks. Extended joypad playtests cover all 44 puzzle solutions, a full solitaire clear, a complete Reversi match, two soft landings, sound/mute, and saved scores after restart. The navigation audit checks instruction back, held buttons, pause exits, puzzle selection, full merge boards, mine-loss prompts, solved lights, and replay/menu result paths. The river pilot may need several normally generated attempts; solitaire deals are not guaranteed solvable.
-
-The ROM was written successfully to a writable DevDay Chromatic cartridge, its header was read back, and the handheld reset succeeded. The owner confirmed that it looks good on the physical Chromatic. Physical controls and audio have not been separately confirmed. Emulator checks do not establish those physical-device results.
+This branch is not a published release and has not been installed on the
+Chromatic. The earlier sixteen-game v0.1.0 remains available. Version-2 save RAM
+keeps its sixteen slots; the eight-game catalog maps to existing slots without
+erasing unused scores. Compare scores with care because rules have changed.

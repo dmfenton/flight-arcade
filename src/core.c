@@ -1,7 +1,7 @@
 #include "arcade.h"
 
 uint8_t keys, pressed, sound_on = 1;
-uint16_t clock_frames, score, best[GAME_COUNT];
+uint16_t clock_frames, score, best[SAVE_SLOT_COUNT];
 uint8_t selected_game, tiles[360], attrs[360];
 static uint8_t old_tiles[360], old_attrs[360], pause_tiles[360], pause_attrs[360];
 static uint8_t dirty_rows[18], dirty;
@@ -18,7 +18,7 @@ static const uint16_t palettes[] = {
     RGB(2,3,6), RGB(4,6,10), RGB(7,11,16), RGB(13,18,23),
     RGB(26,31,29), RGB(18,26,25), RGB(8,15,19), RGB(2,4,8)
 };
-typedef struct { uint16_t magic; uint8_t version, sound; uint16_t high[GAME_COUNT]; } Save;
+typedef struct { uint16_t magic; uint8_t version, sound; uint16_t high[SAVE_SLOT_COUNT]; } Save;
 #define SAVE ((volatile Save *)0xA000)
 
 void save_settings(void) {
@@ -28,7 +28,7 @@ void save_settings(void) {
     SAVE->magic = 0xF1A8;
     SAVE->version = 2;
     SAVE->sound = sound_on;
-    for (i=0;i<GAME_COUNT;i++) SAVE->high[i] = best[i];
+    for (i=0;i<SAVE_SLOT_COUNT;i++) SAVE->high[i] = best[i];
     DISABLE_RAM;
 }
 void load_settings(void) {
@@ -37,7 +37,7 @@ void load_settings(void) {
     SWITCH_RAM(0);
     if (SAVE->magic == 0xF1A8 && SAVE->version == 2) {
         sound_on = SAVE->sound ? 1 : 0;
-        for(i=0;i<GAME_COUNT;i++) best[i]=SAVE->high[i];
+        for(i=0;i<SAVE_SLOT_COUNT;i++) best[i]=SAVE->high[i];
     }
     DISABLE_RAM;
 }
@@ -123,7 +123,8 @@ void sfx(uint8_t kind) {
     NR24_REG=kind==2 ? 0xC4 : 0xC7;
 }
 void add_score(uint16_t n) { if(score>65535U-n)score=65535U; else score+=n; }
-void record_score(uint8_t game) { if(score>best[game]) {best[game]=score;save_settings();} }
+uint16_t best_score(uint8_t game) { return best[game_save_slots[game]]; }
+void record_score(uint8_t game) { uint8_t slot=game_save_slots[game];if(score>best[slot]) {best[slot]=score;save_settings();} }
 void hide_objects(void) { uint8_t i; for(i=0;i<40;i++)move_sprite(i,0,0); }
 void object(uint8_t id,uint8_t tile,int16_t x,int16_t y,uint8_t palette) {
     set_sprite_tile(id,tile); set_sprite_prop(id,palette);
@@ -154,12 +155,33 @@ uint8_t game_frame(void) {
     pressed=0;
     return resume;
 }
+static void release_actions(void){
+    do{read_frame();}while(keys&(J_A|J_B|J_START));
+}
 uint8_t result_action(const char *title,const char *detail,const char *action) {
     record_score(selected_game);hide_objects();clear_screen(0);
     text(2,3,title,4);text(2,5,detail,0);
     text(4,8,"SCORE",6);number(10,8,score,5,0);
-    text(4,10,"BEST",6);number(10,10,best[selected_game],5,4);
-    text(3,14,action,0);text(3,16,"B ARCADE MENU",6);flush();sfx(2);
+    text(4,10,"BEST",6);number(10,10,best_score(selected_game),5,4);
+    text(3,14,action,0);text(3,16,"B ARCADE MENU",6);flush();sfx(2);release_actions();
     while(1){read_frame();if(pressed&J_A)return 1;if(pressed&J_B)return 0;}
 }
 uint8_t result(const char *title,const char *detail) { return result_action(title,detail,"A PLAY AGAIN"); }
+
+uint8_t choice(const char *title,const char *detail,const char *left,const char *right) {
+    uint8_t selected=0,redraw=1,armed=0;
+    hide_objects();
+    while(1) {
+        if(redraw) {
+            clear_screen(0);text(1,3,title,4);text(1,5,detail,6);
+            box(1,8+selected*3,18,1,7);cell(1,8+selected*3,'>',7);
+            text(3,8,left,selected==0?7:0);text(3,11,right,selected==1?7:0);
+            text(1,14,"D-PAD CHOOSE",6);text(1,16,"A PICK   B MENU",0);flush();redraw=0;
+        }
+        if(!armed){release_actions();armed=1;}
+        if(!game_frame())return 255;
+        if(pressed&(J_LEFT|J_RIGHT|J_UP|J_DOWN)){selected^=1;redraw=1;sfx(0);}
+        if(pressed&J_A)return selected;
+        if(pressed&J_B){record_score(selected_game);return 255;}
+    }
+}

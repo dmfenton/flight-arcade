@@ -1,100 +1,260 @@
 {
-  "rom_sha256": "3b4088e6c58b0411316d1616d3b362707b9588386e5c4227577cfb7b41e1027b",
+  "rom_sha256": "f12f55f0b59ce69e49cc1dd353749fba6499d503612b61d5503b1478ce9f340f",
   "results": [
     {
       "game": "Star Skimmer",
-      "shooting_and_enemy_hits": true,
-      "saved_best_after_restart": true,
-      "saved_sound_after_restart": true,
-      "emulated_frames": 1322
-    },
-    {
-      "fruit_collection_and_growth": true,
-      "wall_collision_and_game_over": true,
-      "game": "Orchard Snake",
-      "emulated_frames": 988,
-      "score": 60
-    },
-    {
-      "paddle_ball_and_brick_collisions": true,
-      "cleared_first_wall": true,
-      "stage_2": true,
-      "game": "Brick Flight",
-      "emulated_frames": 3339,
-      "score": 550
-    },
-    {
-      "undo_restores_board_and_score": true,
-      "tile_value_conservation": true,
-      "valid_moves": 139,
-      "merges": 90,
-      "game": "Merge Cabin",
-      "emulated_frames": 1808,
-      "score": 1360
-    },
-    {
-      "safe_first_pick": true,
-      "flood_reveal": true,
-      "flag_and_unflag": true,
-      "resume_has_no_action": true,
-      "all_53_safe_cells_revealed": true,
-      "win": true,
-      "game": "Mine Garden",
-      "emulated_frames": 894,
-      "score": 646
-    },
-    {
-      "undo": true,
-      "10_generated_puzzles_solved": true,
-      "next_puzzle_and_score": true,
-      "game": "Lights Out",
-      "emulated_frames": 3756,
-      "score": 2908
-    },
-    {
-      "serve_and_both_paddles": true,
-      "first_to_7_win": true,
-      "game": "Orbit Rally",
-      "emulated_frames": 4892,
-      "score": 1345
-    },
-    {
-      "scrolling_and_steering": true,
-      "boost_then_cruise": true,
-      "gems_and_distance_score": true,
-      "narrow_channel_survival": true,
-      "channel_width": 11,
-      "attempts": [
+      "shield_cost": 2,
+      "overheated": true,
+      "recovered": true,
+      "refits": [
+        0,
+        1
+      ],
+      "sectors": 3,
+      "navigation": [
         {
-          "menu_delay_frames": 0,
-          "score": 155,
-          "game_over": true
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
         },
         {
-          "menu_delay_frames": 7,
-          "score": 314,
-          "game_over": true
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
         },
         {
-          "menu_delay_frames": 19,
-          "score": 289,
-          "game_over": true
-        },
-        {
-          "menu_delay_frames": 31,
-          "score": 646,
-          "game_over": true
-        },
-        {
-          "menu_delay_frames": 63,
-          "score": 750,
-          "game_over": false
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
         }
       ],
-      "game": "River Run",
-      "emulated_frames": 4214,
-      "score": 750
+      "score": 3140,
+      "frames": 4672,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Reactor Drop",
+      "lines": 24,
+      "pieces": 69,
+      "vents": 9,
+      "multi_clears": 2,
+      "navigation": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 4280,
+      "frames": 3210,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Ricochet Works",
+      "rooms": 3,
+      "gravity_flips": 13,
+      "magnetic_catches": 59,
+      "max_chain": 8,
+      "navigation": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 2770,
+      "frames": 15099,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Gravity Rally",
+      "player": 7,
+      "opponent": 0,
+      "spin": true,
+      "dash": true,
+      "wells": 2,
+      "navigation": [
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 1250,
+      "frames": 2401,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Tide Rider",
+      "reaches": 3,
+      "forks": [
+        0,
+        1
+      ],
+      "rescues": 14,
+      "current_drift": true,
+      "drag": true,
+      "navigation": [
+        {
+          "screen": "fork",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "fork",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 1590,
+      "frames": 2348,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Pulse Serpent",
+      "arenas": 3,
+      "phase_cost": 3,
+      "phase_wall_crossing": true,
+      "choices": [
+        0,
+        1
+      ],
+      "pulsing_gates": true,
+      "navigation": [
+        {
+          "screen": "coil-choice",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "coil-choice",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 850,
+      "frames": 2337,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Orbit Salvage",
+      "pods": 9,
+      "refits": [
+        0,
+        1
+      ],
+      "tether": true,
+      "momentum": true,
+      "navigation": [
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "refit",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 4010,
+      "frames": 2646,
+      "campaign_won": true,
+      "score_persisted": true
+    },
+    {
+      "game": "Lunar Courier",
+      "deliveries": 5,
+      "mass_states": [
+        0,
+        1,
+        3
+      ],
+      "mass_changes_acceleration": true,
+      "jettison": true,
+      "fuel_between_jobs": [
+        168,
+        157,
+        146,
+        135
+      ],
+      "wind": [
+        -1,
+        1
+      ],
+      "navigation": [
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "contract",
+          "back": true,
+          "pause_menu": true,
+          "pause_freezes": true
+        },
+        {
+          "screen": "campaign_result",
+          "held_input": true,
+          "replay": true,
+          "back": true
+        }
+      ],
+      "score": 2349,
+      "frames": 1845,
+      "campaign_won": true,
+      "score_persisted": true
     }
   ],
-  "elapsed_seconds": 4.19
+  "input_only": true
 }

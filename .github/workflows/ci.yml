@@ -2,6 +2,12 @@ name: Build and playtest
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Optional release tag; leave empty to build and verify only'
+        required: false
+        type: string
+        default: ''
   push:
     branches: [main]
   pull_request:
@@ -32,11 +38,9 @@ jobs:
         run: sh ./build.sh
       - name: Check menus, pause, sound, and mute
         run: python verify.py
-      - name: Play the original eight games
+      - name: Complete eight campaigns and exercise their deeper mechanics
         run: python playtest.py
-      - name: Play the added games and solve all 44 puzzles
-        run: python playtest_more.py
-      - name: Audit back, cancel, pause, replay, and exit routes in all 16 games
+      - name: Audit back, cancel, pause, replay, and exit routes in all eight games
         run: python verify_navigation.py
       - name: Package verified ROM and public source
         run: python package.py
@@ -49,7 +53,7 @@ jobs:
             verification/rom-manifest.json
 
   publish:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && inputs.release_tag != ''
     needs: verify
     runs-on: ubuntu-24.04
     permissions:
@@ -58,7 +62,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
-      RELEASE_TAG: v0.1.0
+      RELEASE_TAG: ${{ inputs.release_tag }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Download the build that passed every check
@@ -80,10 +84,10 @@ jobs:
                   assert not any(part in ('private','tools','.git','..')for part in Path(name).parts)
                   assert not name.endswith(('.sav','.ram','.rtc','delivery.json'))
               navigation=json.loads(archive.read('FlightArcade/verification/navigation-results.json'))
-              assert navigation['passed']and len(navigation['results'])==16
+              assert navigation['passed']and len(navigation['results'])==manifest['games']==8
               assert navigation['rom_sha256']==manifest['sha256']
               assert archive.read('FlightArcade/LICENSE').startswith(b'MIT License')
-          print('Verified release ROM and all 16 navigation routes:',manifest['sha256'])
+          print('Verified release ROM and all eight navigation routes:',manifest['sha256'])
           PY
       - name: Publish the tested release
         run: |

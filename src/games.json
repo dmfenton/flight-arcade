@@ -1,194 +1,170 @@
 [
   {
     "name": "Star Skimmer",
-    "description": "SPACE SHMUP",
+    "save_slot": 0,
+    "description": "SALVAGE + UPGRADES",
     "help": [
-      "DEFEND THE STARS.",
+      "THREE SECTOR RUN.",
       "D-PAD MOVE",
-      "A HOLD TO FIRE",
-      "DODGE ENEMY FIRE.",
-      "3 HULL. EVERY HIT",
-      "COUNTS."
+      "A FIRE B SHIELD",
+      "FIRING BUILDS HEAT",
+      "COLLECT THE SCRAP.",
+      "DEFEAT EACH BOSS."
+    ],
+    "strategy": [
+      "SHIELDS COST 2.",
+      "RELEASE A TO COOL.",
+      "CHASE SALVAGE OR",
+      "STAY OUT OF FIRE?",
+      "AFTER EACH BOSS,",
+      "UPGRADE OR REPAIR."
     ]
   },
   {
-    "name": "Orchard Snake",
-    "description": "GROW YOUR GARDEN",
+    "name": "Reactor Drop",
+    "save_slot": 8,
+    "description": "PRESSURE + COOLANT",
     "help": [
-      "A GARDEN TO GROW.",
+      "COOL THE REACTOR.",
+      "LEFT/RIGHT MOVE",
+      "A ROTATE",
+      "UP HARD DROP",
+      "DOWN SOFT B VENT",
+      "CLEAR 24 ROWS."
+    ],
+    "strategy": [
+      "PRESSURE ADDS JUNK",
+      "MULTI-ROW CLEARS",
+      "EARN MORE COOLANT.",
+      "B DROPS THEN VENTS",
+      "3 COOL. JUNK FALLS",
+      "PACE YOUR SPENDING"
+    ]
+  },
+  {
+    "name": "Ricochet Works",
+    "save_slot": 2,
+    "description": "GRAVITY + MAGNETS",
+    "help": [
+      "BREAK THREE ROOMS",
+      "LEFT/RIGHT PADDLE",
+      "A LAUNCH / GRAVITY",
+      "B HOLD MAGNET",
+      "RED BRICKS CHAIN.",
+      "KEEP THE BALL UP."
+    ],
+    "strategy": [
+      "GRAVITY FLIPS USE",
+      "CHARGES. RED CELLS",
+      "REFILL ONE CHARGE.",
+      "MAGNETS USE ENERGY",
+      "AIM WITH PADDLE.",
+      "CHAINS MULTIPLY."
+    ]
+  },
+  {
+    "name": "Gravity Rally",
+    "save_slot": 10,
+    "description": "SPIN + FORCE FIELDS",
+    "help": [
+      "FIRST TO 7 POINTS.",
+      "UP/DOWN PADDLE",
+      "A SERVE / DASH",
+      "B REVERSE FIELD",
+      "MOVING HITS SPIN.",
+      "WELLS BEND SHOTS."
+    ],
+    "strategy": [
+      "DASH HITS GO FAST.",
+      "DASH NEEDS REST.",
+      "B COSTS ONE FLUX.",
+      "POINTS REFILL FLUX",
+      "FIELD SWITCHES",
+      "BETWEEN TWO WELLS."
+    ]
+  },
+  {
+    "name": "Tide Rider",
+    "save_slot": 6,
+    "description": "CURRENTS + RESCUES",
+    "help": [
+      "SURVIVE 3 REACHES.",
+      "LEFT/RIGHT PADDLE",
+      "A ROW B DRAG",
+      "MOMENTUM PERSISTS.",
+      "RESCUE THE GOLD.",
+      "WATCH THE CURRENT"
+    ],
+    "strategy": [
+      "ROWING USES POWER.",
+      "DRAG SLOWS DRIFT.",
+      "COAST TO RECOVER.",
+      "RESCUES ADD POWER.",
+      "CHOOSE RAPIDS OR",
+      "REPAIR AT FORKS."
+    ]
+  },
+  {
+    "name": "Pulse Serpent",
+    "save_slot": 1,
+    "description": "PHASE + TAIL RISKS",
+    "help": [
+      "HARVEST 3 ARENAS.",
       "D-PAD TURN",
-      "A HOLD FOR TURBO",
-      "EAT FRUIT. AVOID",
-      "WALLS AND YOUR",
-      "OWN TAIL."
+      "A BOOST B PHASE",
+      "EAT 5 PER ARENA.",
+      "FRUIT GIVES POWER",
+      "GATES PULSE ON/OFF"
+    ],
+    "strategy": [
+      "BOOST SPENDS POWER",
+      "PHASE COSTS 3.",
+      "FOUR STEPS IGNORE",
+      "TAIL AND WALLS.",
+      "CHOOSE LONG COIL",
+      "OR A POWER REFILL."
     ]
   },
   {
-    "name": "Brick Flight",
-    "description": "PADDLE + BRICKS",
+    "name": "Orbit Salvage",
+    "save_slot": 13,
+    "description": "GRAVITY + TOW LINES",
     "help": [
-      "BREAK EVERY BRICK.",
-      "LEFT/RIGHT MOVE",
-      "A LAUNCH BALL",
-      "3 BALLS. STEER",
-      "THE BOUNCE WITH",
-      "YOUR PADDLE."
+      "RECOVER 9 PODS.",
+      "D-PAD THRUST",
+      "A TETHER / RELEASE",
+      "B BRAKE USES FUEL",
+      "TOW TO LEFT DOCK.",
+      "AVOID THE HOT CORE"
+    ],
+    "strategy": [
+      "TETHER NEAR A POD.",
+      "TENSION PULLS BOTH",
+      "MASS FIGHTS TURNS.",
+      "DOCK SLOWLY.",
+      "WAIT AT DOCK FOR",
+      "FREE REFUELING."
     ]
   },
   {
-    "name": "Merge Cabin",
-    "description": "SLIDE. MERGE. UNDO.",
+    "name": "Lunar Courier",
+    "save_slot": 15,
+    "description": "CARGO + MOON ROUTES",
     "help": [
-      "MAKE ROOM FOR 2048",
-      "D-PAD SLIDE",
-      "B UNDO LAST MOVE",
-      "MATCH TWO EQUAL",
-      "TILES TO MERGE.",
-      "KEEP GOING AT 2048"
-    ]
-  },
-  {
-    "name": "Mine Garden",
-    "description": "A LITTLE LOGIC",
-    "help": [
-      "FIND A SAFE PATH.",
-      "D-PAD MOVE CURSOR",
-      "A REVEAL B FLAG",
-      "10 MINES. NUMBERS",
-      "COUNT NEIGHBORS.",
-      "FIRST PICK IS SAFE"
-    ]
-  },
-  {
-    "name": "Lights Out",
-    "description": "25 LIGHTS TO SOLVE",
-    "help": [
-      "ALL LIGHTS OFF.",
-      "D-PAD MOVE CURSOR",
-      "A FLIP B UNDO",
-      "FLIPS ONE LIGHT",
-      "AND ITS NEIGHBORS.",
-      "ENDLESS PUZZLES."
-    ]
-  },
-  {
-    "name": "Orbit Rally",
-    "description": "ONE MORE RALLY",
-    "help": [
-      "A DUEL IN ORBIT.",
-      "UP/DOWN MOVE",
-      "A SERVE THE ORB",
-      "FIRST TO 7 WINS.",
-      "ANGLE YOUR SHOTS",
-      "WITH THE PADDLE."
-    ]
-  },
-  {
-    "name": "River Run",
-    "description": "A RIVER OF TROUBLE",
-    "help": [
-      "FOLLOW THE RIVER.",
-      "LEFT/RIGHT STEER",
-      "A HOLD TO BOOST",
-      "DODGE ROCKS AND",
-      "BANKS. COLLECT",
-      "SPARKLING GEMS."
-    ]
-  },
-  {
-    "name": "Block Drop",
-    "description": "FALL. ROTATE. CLEAR",
-    "help": [
-      "CLEAR FULL ROWS.",
-      "LEFT/RIGHT MOVE",
-      "A / B ROTATE",
-      "DOWN SOFT DROP.",
-      "UP HARD DROP.",
-      "7-PIECE BAG."
-    ]
-  },
-  {
-    "name": "Crate Escape",
-    "description": "24 CRATE PUZZLES",
-    "help": [
-      "CRATES ON TARGETS.",
-      "D-PAD WALK / PUSH",
-      "A UNDO B RESTART",
-      "YOU CAN PUSH",
-      "BUT NEVER PULL.",
-      "24 OPEN PUZZLES."
-    ]
-  },
-  {
-    "name": "Flip Pairs",
-    "description": "A MEMORY GETAWAY",
-    "help": [
-      "FIND TWELVE PAIRS.",
-      "D-PAD MOVE CURSOR",
-      "A FLIP B CANCEL",
-      "TWO MATCHING ICONS",
-      "STAY FACE UP.",
-      "FEWER TURNS WINS."
-    ]
-  },
-  {
-    "name": "Maze Hopper",
-    "description": "EXPLORE + COLLECT",
-    "help": [
-      "FIND ALL FIVE GEMS",
-      "D-PAD WALK",
-      "A HOLD TO SEE MAP",
-      "COLLECT THE GEMS",
-      "THEN FIND THE GATE",
-      "A NEW MAZE AWAITS."
-    ]
-  },
-  {
-    "name": "Peg Trails",
-    "description": "20 PEG PUZZLES",
-    "help": [
-      "LEAVE JUST ONE PEG",
-      "D-PAD MOVE CURSOR",
-      "A PICK B UNDO",
-      "PICK A PEG, THEN",
-      "JUMP OVER A PEG",
-      "INTO AN EMPTY HOLE"
-    ]
-  },
-  {
-    "name": "Orbit Discs",
-    "description": "STRATEGY VS CPU",
-    "help": [
-      "FINISH WITH MORE.",
-      "D-PAD MOVE CURSOR",
-      "A PLACE B HINTS",
-      "YOU GREEN. CPU RED",
-      "TRAP A LINE OF RED",
-      "BETWEEN YOUR DISCS"
-    ]
-  },
-  {
-    "name": "Golf Solitaire",
-    "description": "A WHOLE DECK AWAY",
-    "help": [
-      "CLEAR SEVEN STACKS",
-      "LEFT/RIGHT CHOOSE",
-      "A PLAY B DRAW",
-      "PLAY ONE RANK UP",
-      "OR DOWN. A-K WRAPS",
-      "T MEANS TEN."
-    ]
-  },
-  {
-    "name": "Lunar Lander",
-    "description": "A SOFT MOON LANDING",
-    "help": [
-      "LAND ON THE PAD.",
+      "FLY FIVE JOBS.",
       "LEFT/RIGHT STEER",
       "A / UP THRUST",
-      "APPROACH SLOWLY.",
-      "WATCH YOUR FUEL.",
-      "SOFT LANDING SCORE"
+      "B JETTISON CARGO",
+      "CHOOSE JOB AT PORT",
+      "SOFT LAND TO EARN."
+    ],
+    "strategy": [
+      "HEAVY CARGO FALLS",
+      "FASTER. GLASS IS",
+      "FRAGILE: LAND SLOW",
+      "FUEL LASTS ALL RUN",
+      "HOME REFUELS YOU.",
+      "B AT DOCK CASHES."
     ]
   }
 ]

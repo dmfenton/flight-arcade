@@ -45,11 +45,13 @@
 #define TILE_COUNT 192
 
 extern uint8_t keys, pressed, sound_on;
-extern uint16_t clock_frames, score, best[GAME_COUNT];
+#define SAVE_SLOT_COUNT 16
+extern uint16_t clock_frames, score, best[SAVE_SLOT_COUNT];
 extern uint8_t selected_game, tiles[360], attrs[360];
 extern const unsigned char graphics[];
 extern const char * const game_names[GAME_COUNT];
 extern const char * const game_descriptions[GAME_COUNT];
+extern const uint8_t game_save_slots[GAME_COUNT];
 
 void init_video(void);
 void clear_screen(uint8_t palette);
@@ -68,28 +70,21 @@ void add_score(uint16_t n);
 void save_settings(void);
 void load_settings(void);
 void record_score(uint8_t game);
+uint16_t best_score(uint8_t game);
+uint8_t choice(const char *title,const char *detail,const char *left,const char *right);
 void hud(const char *label);
 void hide_objects(void);
 void object(uint8_t id, uint8_t tile, int16_t x, int16_t y, uint8_t palette);
 uint8_t result(const char *title, const char *detail);
 uint8_t result_action(const char *title, const char *detail, const char *action);
 uint8_t intro(uint8_t game) BANKED;
-uint8_t choose_puzzle(uint8_t game, uint8_t current, uint8_t count) BANKED;
 
 void star_skimmer(void) BANKED;
-void orchard_snake(void) BANKED;
+void block_drop(void) BANKED;
 void brick_flight(void) BANKED;
-void merge_cabin(void) BANKED;
-void mine_garden(void) BANKED;
-void lights_out(void) BANKED;
 void orbit_rally(void) BANKED;
 void river_run(void) BANKED;
-void block_drop(void) BANKED;
-void crate_escape(void) BANKED;
-void flip_pairs(void) BANKED;
-void maze_hopper(void) BANKED;
-void peg_trails(void) BANKED;
-void orbit_discs(void) BANKED;
-void golf_solitaire(void) BANKED;
+void orchard_snake(void) BANKED;
+void orbit_salvage(void) BANKED;
 void lunar_lander(void) BANKED;
 #endif

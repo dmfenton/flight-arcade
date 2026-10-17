@@ -28,7 +28,8 @@ NAMES=[game['name']for game in json.loads((ROOT/'src/games.json').read_text())]
 SYMBOLS={name:int(addr,16) for name,addr in re.findall(r'^DEF (\S+) 0x([0-9A-Fa-f]+)',(ROOT/'build/FlightArcade.noi').read_text(),re.M)}
 STATIC={}
 base=SYMBOLS['s__DATA']
-for obj in sorted((ROOT/'build').glob('*.o')):
+for src in sorted((ROOT/'src').glob('*.c')):
+    obj=ROOT/'build'/(src.stem+'.o')
     sym=obj.with_suffix('.sym').read_text()
     data_area=re.search(r'^\s+(\S+) _DATA\s+size',sym,re.M)[1]
     for name,offset in re.findall(r'^\s+'+data_area+r' (\S+)\s+([0-9A-F]{8}) [GR]+',sym,re.M):
@@ -81,7 +82,8 @@ class Game:
         for key in self.held-new:self.b.button_release(key)
         for key in new-self.held:self.b.button_press(key)
         self.held=new
-        trace('joypad',keys=sorted(new),frame=self.frames)
+        if new!=getattr(self,'last_traced_keys',None):
+            trace('joypad',keys=sorted(new),frame=self.frames);self.last_traced_keys=new
     def tap(self,key,n=4):
         mask={'right':1,'left':2,'up':4,'down':8,'a':16,'b':32,'select':64,'start':128}[key]
         self.hold();self.wait(lambda:not(self.byte('_keys')&mask),'ready for '+key)
@@ -102,8 +104,8 @@ class Game:
         self.tap('a');self.wait(lambda:NAMES[index].upper() in self.row(2),'instructions')
         self.shot(f'{index+1:02d}-intro')
         self.tap('a')
-        if index in (9,12):
-            self.wait(lambda:'CHOOSE PUZZLE' in self.row(4),'puzzle picker');self.shot(f'{index+1:02d}-picker');self.tap('a')
+        if index==7:
+            self.wait(lambda:'CARGO CONTRACT' in self.row(3),'contract choice');self.shot('08-contract');self.tap('a')
         self.wait(lambda:'START PAUSE' in self.row(17),'gameplay')
         self.shot(f'{index+1:02d}-play')
         trace('enter',game=NAMES[index])
@@ -129,7 +131,7 @@ def atlas(indices,name,kind='play'):
 
 def smoke():
     results=[]
-    g=Game();g.shot('menu');g.tap('right');g.shot('menu-2');g.close()
+    g=Game();g.shot('menu');g.close()
     for i,name in enumerate(NAMES):
         progress('emulator_smoke',i)
         g=Game();g.enter(i);g.pause_test(i);g.exit_test();g.close()
@@ -141,6 +143,7 @@ def smoke():
         atlas(indices,f'instructions-{first//4+1}.png','intro')
     (OUT/'smoke-results.json').write_text(json.dumps({'rom_sha256':ROM_SHA,'results':results},indent=2))
     audio_test()
+    save_test()
     progress('emulator_smoke_passed',len(NAMES))
     return results
 
@@ -155,6 +158,24 @@ def audio_test():
     assert loud>0 and muted==0,f'{ROOT}/build/FlightArcade.gbc: sound or mute failed ({loud}, {muted})'
     (OUT/'audio-results.json').write_text(json.dumps({'rom_sha256':ROM_SHA,'sfx_peak':loud,'muted_peak':muted},indent=2))
     print('PASS sound and mute',flush=True)
+
+def save_test():
+    import struct
+    expected=[700+i*29 for i in range(16)]
+    ram=bytearray(32768);struct.pack_into('<HBB16H',ram,0,0xF1A8,2,1,*expected)
+    g=Game(bytes(ram))
+    loaded=g.array('_best',32)
+    assert [loaded[i]|loaded[i+1]<<8 for i in range(0,32,2)]==expected
+    catalog=json.loads((ROOT/'src/games.json').read_text())
+    for i,game in enumerate(catalog):
+        assert f'{expected[game["save_slot"]]:05}'in g.row(14),f'{ROOT}/build/FlightArcade.gbc: menu mapped wrong save slot'
+        if i<7:g.tap('down',1)
+    g.tap('b',1);saved=g.close()
+    magic,version,sound,*scores=struct.unpack_from('<HBB16H',saved)
+    assert (magic,version,sound)==(0xF1A8,2,0)and scores==expected
+    g=Game(saved);assert g.byte('_sound_on')==0;g.close()
+    (OUT/'save-results.json').write_text(json.dumps(dict(rom_sha256=ROM_SHA,passed=True,legacy_slots_preserved=16,menu_slots_checked=8,sound_persisted=True),indent=2))
+    print('PASS sixteen legacy save slots, eight menu mappings, and sound persistence',flush=True)
 
 if __name__=='__main__':
     smoke()

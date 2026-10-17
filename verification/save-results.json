@@ -1,0 +1,7 @@
+{
+  "rom_sha256": "f12f55f0b59ce69e49cc1dd353749fba6499d503612b61d5503b1478ce9f340f",
+  "passed": true,
+  "legacy_slots_preserved": 16,
+  "menu_slots_checked": 8,
+  "sound_persisted": true
+}

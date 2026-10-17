@@ -11,13 +11,14 @@ if [ ! -x "$LCC" ]; then
 fi
 python3 "$ROOT/src/generate_assets.py"
 python3 "$ROOT/src/generate_catalog.py"
-python3 "$ROOT/src/generate_puzzles.py"
 mkdir -p "$ROOT/build"
+set --
 for src in "$ROOT"/src/*.c; do
     name=$(basename "$src" .c)
-    if [ ! -f "$ROOT/build/$name.o" ] || [ "$src" -nt "$ROOT/build/$name.o" ] || [ "$ROOT/src/arcade.h" -nt "$ROOT/build/$name.o" ] || [ "$ROOT/src/catalog.h" -nt "$ROOT/build/$name.o" ]; then
-        "$LCC" -Wa-l -Wl-m -Wf--max-allocs-per-node50000 -c -o "$ROOT/build/$name.o" "$src"
+    if [ ! -f "$ROOT/build/$name.o" ] || [ "$ROOT/build.sh" -nt "$ROOT/build/$name.o" ] || [ "$src" -nt "$ROOT/build/$name.o" ] || [ "$ROOT/src/arcade.h" -nt "$ROOT/build/$name.o" ] || [ "$ROOT/src/catalog.h" -nt "$ROOT/build/$name.o" ]; then
+        "$LCC" -Wa-l -Wl-m -Wf--max-allocs-per-node5000 -c -o "$ROOT/build/$name.o" "$src"
     fi
+    set -- "$@" "$ROOT/build/$name.o"
 done
-"$LCC" -Wa-l -Wl-m -Wl-j -Wm-yC -Wm-yt0x1B -Wm-ya4 -Wm-yo32 -Wm-ynFLIGHTARCADE -o "$ROOT/build/FlightArcade.gbc" "$ROOT"/build/*.o
+"$LCC" -Wa-l -Wl-m -Wl-j -Wm-yC -Wm-yt0x1B -Wm-ya4 -Wm-yo16 -Wm-ynFLIGHTARCADE -o "$ROOT/build/FlightArcade.gbc" "$@"
 printf 'Built %s\n' "$ROOT/build/FlightArcade.gbc"

@@ -1,11 +1,22 @@
 # Contributing
 
-Use GBDK 2020 4.5.0 and the pinned Python dependencies in `requirements-dev.txt`. Follow the build and verification commands in [README.md](README.md).
+Keep the eight games distinct. A new mechanic should create a decision that
+changes play, rather than only a new score label or faster repetition. Keep
+physics and resources with their owning game module; see [DESIGN.md](DESIGN.md).
 
-Game rules and round state belong to each game's C file. Shared input, rendering, pause, sound, scores, and saves belong to `src/core.c`. Edit `src/games.json` for names and instructions, `src/generate_assets.py` for tile art, and `src/generate_puzzles.py` for generated puzzle content; rebuild to refresh their generated outputs.
+Use GBDK 2020 4.5.0 and the exact dependencies in `requirements-dev.txt`. Run the
+build, smoke/audio checks, input-only campaigns, navigation audit, and package
+command in the README before opening a pull request. Include the ROM hash and
+meaningful behavior evidence. Do not substitute a RAM-patched terminal state for
+playing the mechanic. Whole-emulator checkpoints reached through input may be
+used to branch an exit/replay check.
 
-Before proposing a change, rebuild, run the smoke suite, both playtest scripts, and `python3 verify_navigation.py`, inspect screenshots of changed screens, and run `python3 package.py`. Report the ROM hash and relevant test results. Label emulator checks and physical-device checks separately. Existing test pilots are heuristics; a lost random round is not by itself evidence of a game defect.
+Edit `src/games.json` for labels, controls, tactics, and stable save slots. Run
+`src/generate_catalog.py`; edit `src/generate_assets.py` for generated tile art.
+Do not change the persistent save layout or remap a slot silently. Remove
+obsolete paths when replacing a game or test.
 
-Keep original cartridge backups, activation codes, device logs, SDK downloads, and local runtime traces out of commits. Tests store private traces beside the main checkout, resolved through Git's common directory. An extracted source archive uses its own `private/` folder.
-
-Only contribute code and assets you can release under this project's MIT license. Include the source of any third-party contribution and its license. No copied commercial game code, ROMs, artwork, characters, or audio.
+Keep `private/`, SDK binaries, personal cartridge backups, USB identifiers, and
+loader/session state out of commits and archives. Packaging uses an explicit
+public allowlist and requires matching test hashes. A release and a cartridge
+write each require an explicit owner request.
