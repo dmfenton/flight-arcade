@@ -1,0 +1,6 @@
+self-hosted-runner:
+  labels:
+    - flight-arcade-docker
+    - flight-arcade-pr
+    - lilserver
+    - pr-isolated
